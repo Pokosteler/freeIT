@@ -1,3 +1,6 @@
+package lesson2.Java_Beginner_chapter_1;
+
+// Дано любое натуральное 4-х значное число. Верно ли, что все цифры числа различны?
 public class Java_Beginner_chapter_1_Task5 {
     public static void main(String[] args) {
         int x = 2630;

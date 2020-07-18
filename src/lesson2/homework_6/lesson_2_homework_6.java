@@ -1,3 +1,6 @@
+package lesson2.homework_6;
+
+// Даны 2 числа. Вывести большее из них
 public class lesson_2_homework_6 {
     public static void main(String[] args) {
         int a = 17;
