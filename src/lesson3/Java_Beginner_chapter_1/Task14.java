@@ -15,9 +15,8 @@ public class Task14 {
         int maxIndex = 0;
         int minIndex = 0;
         int randomNumber[] = new int[arrayLength];
-        Random rand = new Random();
         for (int i = 0; i < arrayLength; i++) {
-            randomNumber[i] = rand.nextInt();
+            randomNumber[i] = (int) (Math.random() * 10) + 1;
             System.out.print(randomNumber[i] + " ");
             if (maxNumber <= randomNumber[i]) {
                 maxNumber = randomNumber[i];

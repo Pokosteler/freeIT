@@ -1,9 +1,9 @@
-package lesson3.homework_4;
+package lesson3.Homework4;
 
 import java.util.Scanner;
 
 // Составьте программу, вычисляющую A*B, не пользуясь операцией умножения.
-public class homework_4 {
+public class Homework4 {
     public static void main(String[] args) {
         int amount = 0;
         Scanner sc = new Scanner(System.in);

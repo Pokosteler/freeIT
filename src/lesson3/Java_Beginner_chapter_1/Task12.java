@@ -1,22 +1,22 @@
 package lesson3.Java_Beginner_chapter_1;
 
-import java.util.Random;
+import java.util.Scanner;
 
 //Найдите сумму первых n целых чисел, которые делятся на 3.
 public class Task12 {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int n = rand.nextInt();
         int amount = 0;
-        if (n > 0) {
-            for (int i = 1; i <= n; i++) {
-                if (i % 3 == 0) {
-                    amount += i;
-                }
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        int i = 3;
+        while (n > 0) {
+            if (i % 3 == 0) {
+                amount += i;
+                n--;
             }
-            System.out.println("amount: " + amount);
-        } else {
-            System.out.println(n + " - negative value or zero");
+            i++;
         }
+        System.out.println("amount: " + amount);
     }
 }

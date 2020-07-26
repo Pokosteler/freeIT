@@ -1,7 +1,7 @@
-package lesson3.homework_3;
+package lesson3.Homework3;
 
 // Вычислить: 1+2+4+8+...+256
-public class homework_3 {
+public class Homework3 {
     public static void main(String[] args) {
         int element = 1;
         int amount = element;
