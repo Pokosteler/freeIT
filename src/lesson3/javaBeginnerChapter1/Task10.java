@@ -1,4 +1,4 @@
-package lesson3.Java_Beginner_chapter_1;
+package lesson3.javaBeginnerChapter1;
 
 import java.util.Random;
 

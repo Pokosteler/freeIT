@@ -1,4 +1,4 @@
-package lesson3.Homework7;
+package lesson3.homework7;
 
 // Напишите программу, определяющую сумму всех нечетных чисел от 1 до 99
 public class Homework7 {

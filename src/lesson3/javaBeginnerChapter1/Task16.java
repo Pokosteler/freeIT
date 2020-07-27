@@ -1,6 +1,5 @@
-package lesson3.Java_Beginner_chapter_1;
+package lesson3.javaBeginnerChapter1;
 
-import java.util.Random;
 import java.util.Scanner;
 
 //Определите сумму элементов одномерного массива, расположенных между
@@ -16,9 +15,8 @@ public class Task16 {
         int minIndex = 0;
         int amount = 0;
         int randomNumber[] = new int[arrayLength];
-        Random rand = new Random();
         for (int i = 0; i < arrayLength; i++) {
-            randomNumber[i] = rand.nextInt();
+            randomNumber[i] = (int) (Math.random() * 10) + 1;
             System.out.print(randomNumber[i] + " ");
             if (maxNumber <= randomNumber[i]) {
                 maxNumber = randomNumber[i];
@@ -29,16 +27,32 @@ public class Task16 {
                 minIndex = i;
             }
         }
+        System.out.println("\nmin: " + minNumber);
+        System.out.println("max: " + maxNumber);
+        int betweenMinAndMax[] = new int[Math.abs(minIndex - maxIndex) - 1];
+        int j = 0;
         if (minIndex > maxIndex) {
-            for (int i = maxIndex; i <= minIndex; i++) {
+            for (int i = maxIndex + 1; i < minIndex; i++) {
                 amount += randomNumber[i];
+                betweenMinAndMax[j] = randomNumber[i];
+                j++;
             }
         }
         if (minIndex < maxIndex) {
-            for (int i = minIndex; i <= maxIndex; i++) {
+            for (int i = minIndex + 1; i < maxIndex; i++) {
                 amount += randomNumber[i];
+                betweenMinAndMax[j] = randomNumber[i];
+                j++;
             }
         }
-        System.out.println("\namount: " + minNumber + " + " + maxNumber + " = " + amount);
+        System.out.print("sum = ");
+        for (int i = 0; i < betweenMinAndMax.length; i++) {
+            if (i < betweenMinAndMax.length - 1) {
+                System.out.print(betweenMinAndMax[i] + " + ");
+            } else {
+                System.out.print(betweenMinAndMax[i]);
+            }
+        }
+        System.out.println(" = " + amount);
     }
 }

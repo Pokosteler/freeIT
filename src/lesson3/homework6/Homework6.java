@@ -1,4 +1,4 @@
-package lesson3.Homework6;
+package lesson3.homework6;
 
 // Напишите программу вывода всех четных чисел от 2 до 100 включительно
 public class Homework6 {

@@ -1,4 +1,4 @@
-package lesson3.Homework3;
+package lesson3.homework3;
 
 // Вычислить: 1+2+4+8+...+256
 public class Homework3 {

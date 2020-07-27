@@ -1,4 +1,4 @@
-package lesson3.Java_Beginner_chapter_1;
+package lesson3.javaBeginnerChapter1;
 
 //Изменить пример с суммой чисел таким образом, чтобы рассчитывалась не сумма, а
 //произведение, т.е. факториал числа.
