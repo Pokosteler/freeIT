@@ -10,7 +10,7 @@ public class Task23 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter string: ");
         String str = sc.nextLine();
-        String myStr = str.replaceAll("<p[^>]*>", "<p>");
-        System.out.println("Total string: " + myStr);
+        String newString = str.replaceAll("<p[^>]*>", "<p>");
+        System.out.println("Total string: " + newString);
     }
 }
