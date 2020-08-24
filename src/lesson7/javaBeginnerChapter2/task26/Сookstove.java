@@ -7,7 +7,7 @@ public class Сookstove extends LargeAppliance implements Configuration {
 
     @Override
     public void turn(Boolean switcher) {
-        if (switcher == true) {
+        if (switcher) {
             System.out.println("Кухонная плита включена в розетку");
         } else {
             System.out.println("Кухонная плита не включена в розетку");

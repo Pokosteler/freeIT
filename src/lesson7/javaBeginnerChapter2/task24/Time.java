@@ -10,21 +10,21 @@ public class Time {
     }
 
     public Time(int seconds, int minutes, int hours) {
-        this.seconds = seconds;
-        this.minutes = minutes;
-        this.hours = hours;
+        this.seconds = seconds % 60;
+        this.minutes = minutes % 60 + (seconds / 60);
+        this.hours = hours + (minutes / 60) + (seconds / 3600);
     }
 
     public int getNumberOfSeconds() {
-        return this.hours * 3600 + this.minutes * 60 + seconds;
+        return getHours() * 3600 + getMinutes() * 60 + getSeconds();
     }
 
-    public String comparisonOfTwoObjects(Time object) {
-        int firstObject = getNumberOfSeconds();
-        int secondObject = object.getNumberOfSeconds();
-        if (firstObject == secondObject) {
-            return "first object = second object";
-        } else if (firstObject > secondObject) {
+    public String comparisonOfTwoObjects(Time time) {
+        int firstTime = getNumberOfSeconds();
+        int secondTime = time.getNumberOfSeconds();
+        if (firstTime == secondTime) {
+            return "first time = second time";
+        } else if (firstTime > secondTime) {
             return "first time > second time";
         } else {
             return "first time < second time";
@@ -32,7 +32,7 @@ public class Time {
     }
 
     public void printTime() {
-        System.out.println(hours + " hours " + minutes + " minutes " + seconds + " seconds contains " + getNumberOfSeconds() + " seconds");
+        System.out.println(getHours() + " hours " + getMinutes() + " minutes " + getSeconds() + " seconds contains " + getNumberOfSeconds() + " seconds");
     }
 
     public int getSeconds() {

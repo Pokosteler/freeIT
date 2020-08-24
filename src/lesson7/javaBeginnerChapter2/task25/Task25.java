@@ -12,22 +12,6 @@ import java.util.Scanner;
 public class Task25 {
     public static void main(String[] args) {
         ATM atm = new ATM(0, 0, 0);
-        atm.print();
-        Scanner sc = new Scanner(System.in);
-        System.out.print("How much $20 would you like to add? ");
-        Integer twentyDollars = sc.nextInt();
-        System.out.print("How much $50 would you like to add? ");
-        Integer fiftyDollars = sc.nextInt();
-        System.out.print("How much $100 would you like to add? ");
-        Integer hundredDollars = sc.nextInt();
-        atm.addMoney(twentyDollars, fiftyDollars, hundredDollars);
-        atm.print();
-        System.out.print("How much $20 would you like to withdraw? ");
-        Integer withdrawTwentyDollars = sc.nextInt();
-        System.out.print("How much $50 would you like to withdraw? ");
-        Integer withdrawFiftyDollars = sc.nextInt();
-        System.out.print("How much $100 would you like to withdraw? ");
-        Integer withdrawHundredDollars = sc.nextInt();
-        atm.withdrawMoney(withdrawTwentyDollars, withdrawFiftyDollars, withdrawHundredDollars);
+        atm.startWork();
     }
 }

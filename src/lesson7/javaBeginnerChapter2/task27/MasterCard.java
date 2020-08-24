@@ -7,7 +7,7 @@ public class MasterCard extends CreditCard implements Configuration {
 
     @Override
     public void cardBlocking(Boolean block) {
-        if (block == true) {
+        if (block) {
             System.out.println("Владелец заблокировал свою карту MasterCard");
         } else {
             System.out.println("Владелец разлокировал свою карту MasterCard");

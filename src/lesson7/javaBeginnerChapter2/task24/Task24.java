@@ -9,7 +9,7 @@ package lesson7.javaBeginnerChapter2.task24;
 public class Task24 {
     public static void main(String[] args) {
         Time firstPeriod = new Time(3751);
-        Time secondPeriod = new Time(30, 2, 1);
+        Time secondPeriod = new Time(500, 120, 13);
         firstPeriod.printTime();
         secondPeriod.printTime();
         System.out.println(firstPeriod.comparisonOfTwoObjects(secondPeriod));
