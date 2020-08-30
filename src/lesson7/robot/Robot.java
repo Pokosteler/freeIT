@@ -15,7 +15,8 @@ public class Robot implements IRobot {
         this.leg = leg;
     }
 
-    public Robot(){}
+    public Robot() {
+    }
 
     public IHead getHead() {
         return head;
@@ -50,14 +51,11 @@ public class Robot implements IRobot {
 
     /**
      * Get the cost of a lesson7.robot
+     *
      * @return int
      */
     @Override
     public int getPrice() {
-        int price = head.getPrice() + hand.getPrice() + leg.getPrice();
-        return price;
+        return head.getPrice() + hand.getPrice() + leg.getPrice();
     }
-
-
-
 }

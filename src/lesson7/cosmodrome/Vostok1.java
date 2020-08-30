@@ -4,10 +4,7 @@ public class Vostok1 implements IStart {
     @Override
     public Boolean systemsCheck() {
         int check = (int) (Math.random() * 15 + 4);
-        if (check > 13) {
-            return true;
-        }
-        return false;
+        return check > 13;
     }
 
     @Override

@@ -3,11 +3,8 @@ package lesson7.robot.heads;
 public class ToshibaHead implements IHead {
     private int price;
 
-    public ToshibaHead(int price) {
-        this.price = price;
-    }
-
     public ToshibaHead() {
+        this.price = 3;
     }
 
     @Override

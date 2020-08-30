@@ -3,11 +3,8 @@ package lesson7.robot.legs;
 public class SamsungLeg implements ILeg {
     private int price;
 
-    public SamsungLeg(int price) {
-        this.price = price;
-    }
-
     public SamsungLeg() {
+        this.price = 7;
     }
 
     @Override

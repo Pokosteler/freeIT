@@ -1,13 +1,10 @@
 package lesson7.robot.heads;
 
 public class SamsungHead implements IHead {
-    private int price;
-
-    public SamsungHead(int price) {
-        this.price = price;
-    }
+    final int price;
 
     public SamsungHead() {
+        this.price = 15;
     }
 
     @Override

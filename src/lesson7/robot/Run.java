@@ -20,9 +20,9 @@ public class Run {
         У всех роботов вызовите метод action.
         Среди 3-х роботов найдите самого дорогого.
         */
-        Robot robot1 = new Robot(new SonyHead(15), new SamsungHand(4), new ToshibaLeg(1));
-        Robot robot2 = new Robot(new SamsungHead(7), new ToshibaHand(3), new SonyLeg(2));
-        Robot robot3 = new Robot(new ToshibaHead(10), new SonyHand(2), new SamsungLeg(3));
+        Robot robot1 = new Robot(new SonyHead(), new SamsungHand(), new ToshibaLeg());
+        Robot robot2 = new Robot(new SamsungHead(), new ToshibaHand(), new SonyLeg());
+        Robot robot3 = new Robot(new ToshibaHead(), new SonyHand(), new SamsungLeg());
         robot1.action();
         System.out.println("Цена robot1: " + robot1.getPrice());
         robot2.action();

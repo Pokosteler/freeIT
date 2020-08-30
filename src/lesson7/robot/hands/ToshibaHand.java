@@ -3,11 +3,8 @@ package lesson7.robot.hands;
 public class ToshibaHand implements IHand {
     private int price;
 
-    public ToshibaHand(int price) {
-        this.price = price;
-    }
-
     public ToshibaHand() {
+        this.price = 5;
     }
 
     @Override
