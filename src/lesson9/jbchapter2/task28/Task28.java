@@ -5,8 +5,11 @@ package lesson9.jbchapter2.task28;
 //массива по индексу.
 public class Task28 {
     public static void main(String[] args) {
-        Box<Object> myBox = new Box<>();
-        myBox.setArray(new Object[]{"Hello", 3f, 80});
-        System.out.println(myBox.get(1));
+        Box<String> myBoxString = new Box<>();
+        Box<Integer> myBoxInteger = new Box<Integer>();
+        myBoxString.setArray(new String[]{"Hello", "World"});
+        myBoxInteger.setArray(new Integer[]{3, 80});
+        System.out.println(myBoxString.get(1));
+        System.out.println(myBoxInteger.get(0));
     }
 }
