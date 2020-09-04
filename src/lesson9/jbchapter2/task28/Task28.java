@@ -1,4 +1,4 @@
-package lesson9.javaBeginnerChapter2.task28;
+package lesson9.jbchapter2.task28;
 
 //Написать класс, который умеет хранить в себе массив любых типов данных (int, long
 //etc.). Реализовать метод get(int index), который возвращает любой элемент

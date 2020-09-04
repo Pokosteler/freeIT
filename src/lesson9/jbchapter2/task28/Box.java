@@ -1,4 +1,4 @@
-package lesson9.javaBeginnerChapter2.task28;
+package lesson9.jbchapter2.task28;
 
 public class Box<T> {
     private T[] array;
