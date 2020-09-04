@@ -21,7 +21,7 @@ public class AnnotationRunner {
 
     static void inspectService(Class<?> serviceClass) throws IllegalAccessException, InvocationTargetException {
         if (serviceClass.isAnnotationPresent(Version.class)) {
-            Version ver = (Version) serviceClass.getAnnotation(Version.class);
+            Version ver = serviceClass.getAnnotation(Version.class);
             System.out.println(ver);
             MyService service = new MyService();
             service.setFirstValue(1);
@@ -29,9 +29,9 @@ public class AnnotationRunner {
             Method[] methods = serviceClass.getDeclaredMethods();
             for (Method m : methods) {
                 if (m.getAnnotation(MethodService.class) != null) {
-                    if (m.getAnnotation(MethodService.class).value() == true) {
+                    if (m.getAnnotation(MethodService.class).value()) {
                         m.setAccessible(true);
-                        m.invoke(service, null);
+                        m.invoke(service);
                     }
                 }
             }
