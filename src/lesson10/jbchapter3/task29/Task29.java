@@ -22,14 +22,11 @@ public class Task29 {
     }
 
     public static List<Integer> deleteNegativeMarks(List<Integer> array) {
-        List<Integer> satisfactoryMarks = new ArrayList<>();
         for (int i = 0; i < array.size(); i++) {
-            if (array.get(i) > 5) {
-                satisfactoryMarks.add(array.get(i));
+            if (array.get(i) < 6) {
+                array.remove(array.get(i));
             }
         }
-        array.clear();
-        array.addAll(satisfactoryMarks);
         return array;
     }
 }

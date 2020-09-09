@@ -19,6 +19,6 @@ public class Task30 {
     }
 
     public static Collection<Integer> deleteRepeatItems(Collection<Integer> array) {
-        return new HashSet<Integer>(array);
+        return new HashSet<>(array);
     }
 }

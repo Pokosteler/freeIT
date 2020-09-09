@@ -24,15 +24,11 @@ public class Task31 {
 
     public static Integer findMaxMark(List<Integer> array) {
         Iterator<Integer> it = array.iterator();
-        Integer max = null;
+        Integer max = 0;
         while (it.hasNext()) {
-            if (max == null) {
-                max = it.next();
-            } else {
-                Integer e = it.next();
-                if (e.compareTo(max) > 0) {
-                    max = e;
-                }
+            Integer e = it.next();
+            if (e.compareTo(max) > 0) {
+                max = e;
             }
         }
         return max;

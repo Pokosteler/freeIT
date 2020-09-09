@@ -22,7 +22,7 @@ public class Task32 {
 
     public static void fillDictionary(HashMap<String, Integer> dictionary, String str) {
         if (str.length() != 0) {
-            String words[] = str.split("[, !?.@]+");
+            String[] words = str.split("[, !?.@]+");
             for (String word : words) {
                 if (!dictionary.containsKey(word.toLowerCase())) {
                     dictionary.put(word.toLowerCase(), 0);
