@@ -26,15 +26,15 @@ public class Application {
     public static void main(String[] args) {
         Library library = new Library();
         Book firstBook = new Book(1, "Best book", "Fantastic");
-        Book secondBook = new Book(2, "Middle book", "Drama");
-        Book thirdBook = new Book(3, "Bad book", "Humor");
+        Book secondBook = new Book(2, "Bad book", "Humor");
+        Book thirdBook = new Book(3, "Middle book", "Drama");
         library.addBook(firstBook);
         library.addBook(secondBook);
         library.addBook(thirdBook);
         library.sortByTitle();
         System.out.println(library.stringBookList());
         library.deleteBook(1);
-        library.sortByDate();
+        library.sortById();
         System.out.println(library.stringBookList());
         library.editBook(secondBook);
         System.out.println(library.stringBookList());

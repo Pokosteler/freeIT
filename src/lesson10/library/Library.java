@@ -3,9 +3,9 @@ package lesson10.library;
 import java.util.*;
 
 public class Library {
-    private List<Book> bookList = new ArrayList();
+    private List<Book> bookList = new LinkedList<>();
     Comparator<Book> compareByTitle = (book1, book2) -> book1.getTitle().compareTo(book2.getTitle());
-    Comparator<Book> compareByDate = (book1, book2) -> -book1.getId().compareTo(book2.getId());
+    Comparator<Book> compareById = (book1, book2) -> -book1.getId().compareTo(book2.getId());
 
     public Library() {
     }
@@ -15,14 +15,14 @@ public class Library {
     }
 
     public String stringBookList() {
-        String str = "";
+        String listOfBooks = "";
         Book book;
-        for (Iterator var2 = this.getBookList().iterator();
-             var2.hasNext(); str = str + "Title \"" + book.getTitle() + "\", genre \"" + book.getGenre() + "\"\n") {
-            book = (Book) var2.next();
+        for (Iterator iterator = this.getBookList().iterator();
+             iterator.hasNext(); listOfBooks = listOfBooks + "Title \"" + book.getTitle() + "\", genre \"" + book.getGenre() + "\"\n") {
+            book = (Book) iterator.next();
         }
 
-        return str;
+        return listOfBooks;
     }
 
     public void setBookList(List<Book> bookList) {
@@ -30,7 +30,7 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        if (!this.getBookList().contains(book.getId())) {
+        if (!this.getBookList().contains(book)) {
             this.bookList.add(book);
         } else {
             System.out.println("The book is already on the list!");
@@ -43,33 +43,30 @@ public class Library {
     }
 
     public Book get(Integer id) {
-        Iterator var2 = this.bookList.iterator();
-        Book book;
-        do {
-            if (!var2.hasNext()) {
-                return null;
+        for (Book book : this.bookList) {
+            if (book.getId().equals(id)) {
+                return book;
             }
-
-            book = (Book) var2.next();
-        } while (!id.equals(book.getId()));
-
-        return book;
+        }
+        return null;
     }
 
     public void editBook(Book book) {
+        Scanner sc = new Scanner(System.in);
         Book oldBook = this.get(book.getId());
         if (oldBook != null) {
-            oldBook.setTitle(book.getTitle());
-            oldBook.setGenre(book.getGenre());
+            System.out.print("Edit title of \"" + book.getTitle() + "\": ");
+            oldBook.setTitle(sc.nextLine());
+            System.out.print("Edit genre of \"" + book.getTitle() + "\": ");
+            oldBook.setGenre(sc.nextLine());
         }
-
     }
 
     public void sortByTitle() {
         this.getBookList().sort(this.compareByTitle);
     }
 
-    public void sortByDate() {
-        Collections.sort(this.getBookList(), this.compareByDate);
+    public void sortById() {
+        this.getBookList().sort(this.compareById);
     }
 }
