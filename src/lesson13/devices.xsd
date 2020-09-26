@@ -1,0 +1,62 @@
+<?xml version="1.0"  standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="devices.xsd" xmlns:q="devices.xsd">
+    <element name="Devices">
+        <complexType>
+            <sequence>
+                <element name="Device" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="Name">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <maxLength value="40"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="Origin">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <maxLength value="40"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="Price" type="decimal"/>
+                            <element name="Type" type="q:Type"/>
+                            <element name="Critical" type="boolean"/>
+                        </sequence>
+                        <attribute name="id" type="q:id" use="required"/>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <simpleType name="id">
+        <restriction base="ID">
+            <pattern value="[a-zA-Z0-9]{6,8}"/>
+        </restriction>
+    </simpleType>
+    <complexType name="Type">
+        <sequence>
+            <element name="Peripheral" type="boolean"/>
+            <element name="PowerConsumption" type="decimal"/>
+            <element name="CoolerAvailability" type="boolean"/>
+            <element name="ComponentGroup" default="IO-Device">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="IO-Device"/>
+                        <enumeration value="Multimedia"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Ports" default="USB">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="COM"/>
+                        <enumeration value="USB"/>
+                        <enumeration value="LPT"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+</schema>
