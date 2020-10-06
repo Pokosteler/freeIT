@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no"?>
+<q:books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd"
+         xmlns:q="books.xsd">
+    <book>
+        <name>Heart of a Dog</name>
+        <author>Mikhail Bulgakov</author>
+        <genres>novel</genres>
+        <year>1925</year>
+        <cover>paperback</cover>
+        <availableForReading>true</availableForReading>
+        <outLibrary>true</outLibrary>
+        <amount>5</amount>
+    </book>
+    <book>
+        <name>Green Mile</name>
+        <author>Stephen King</author>
+        <genres>horror</genres>
+        <year>1996</year>
+        <cover>hardcover</cover>
+        <availableForReading>true</availableForReading>
+        <outLibrary>false</outLibrary>
+        <amount>3</amount>
+    </book>
+    <book>
+        <name>The Great Gatsby</name>
+        <author>F. Scott Fitzgerald</author>
+        <genres>tragedy</genres>
+        <year>1925</year>
+        <cover>hardcover</cover>
+        <availableForReading>false</availableForReading>
+        <outLibrary>true</outLibrary>
+        <amount>6</amount>
+    </book>
+</q:books>
