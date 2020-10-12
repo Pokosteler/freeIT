@@ -13,7 +13,6 @@
                                     </restriction>
                                 </simpleType>
                             </element>
-                            <element name="amount" type="integer"/>
                         </sequence>
                     </complexType>
                 </element>

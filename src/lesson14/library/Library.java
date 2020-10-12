@@ -3,12 +3,9 @@ package lesson14.library;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -46,8 +43,7 @@ public class Library implements Runnable {
     public List<Customer> createCustomer(List<List<String>> listOfCustomers) {
         List<Customer> customers = new ArrayList<>();
         for (List<String> dataOfCustomer : listOfCustomers) {
-            Customer customer = new Customer();
-            customer.setName(dataOfCustomer.get(0));
+            Customer customer = new Customer(dataOfCustomer.get(0));
             customers.add(customer);
         }
         return customers;
@@ -75,11 +71,7 @@ public class Library implements Runnable {
                 }
             }
             return allElements;
-        } catch (ParserConfigurationException ex) {
-            ex.printStackTrace(System.out);
-        } catch (SAXException ex) {
-            ex.printStackTrace(System.out);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace(System.out);
         }
         return null;
@@ -162,7 +154,7 @@ public class Library implements Runnable {
 
     public void takeBookOutLibraryOrNot(Customer customer, Book book) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Do you want to take it out library or to the reading room?");
+        System.out.print("Do you want to take it out library or to the reading room? (0 - out library, 1 - to the reading room) ");
         int choice = sc.nextInt(); // 0 - out library, 1 - to the reading room
         if (choice == 0) {
             System.out.println(customer.getName() + " chose to take it out library");
@@ -218,24 +210,24 @@ public class Library implements Runnable {
                 for (Customer customer : allCustomers) {
                     if (!getBooksAvailableForReading().isEmpty()) {
                         System.out.println(customer.getName() + " is being served");
-                        System.out.println("How many books do you need?");
+                        System.out.print("How many books do you need? ");
                         int numberOfBooks = sc.nextInt();
-                        if (numberOfBooks <= getBooksAvailableForReading().size() && numberOfBooks > 0) {
+                        if (numberOfBooks != 0) {
                             System.out.println("The number of books is calculated...");
                             Thread.sleep(2000);
-                            for (int i = 0; i < numberOfBooks; i++) {
-                                System.out.print("Choose book: ");
-                                Book book = getBooksAvailableForReading().get(sc.nextInt());
-                                System.out.println(customer.getName() + " chose " + book.toString());
-                                takeBookOutLibraryOrNot(customer, book);
+                            if (numberOfBooks <= getBooksAvailableForReading().size() && numberOfBooks > 0) {
+                                for (int i = 0; i < numberOfBooks; i++) {
+                                    printBooks(getBooksAvailableForReading());
+                                    System.out.print("Choose book: ");
+                                    Book book = getBooksAvailableForReading().get(sc.nextInt());
+                                    System.out.println(customer.getName() + " chose " + book.toString());
+                                    takeBookOutLibraryOrNot(customer, book);
+                                }
                             }
-                        }
-                        if (numberOfBooks > getBooksAvailableForReading().size()) {
-                            System.out.println("The number of books is calculated...");
-                            Thread.sleep(2000);
-                            System.out.println("You can’t take so many books, because only " + getBooksAvailableForReading().size() + " books are available in the library");
-                        }
-                        if (numberOfBooks == 0) {
+                            if (numberOfBooks > getBooksAvailableForReading().size()) {
+                                System.out.println("You can’t take so many books, because only " + getBooksAvailableForReading().size() + " books are available in the library");
+                            }
+                        } else {
                             System.out.println("Hm, okay...");
                         }
                         System.out.println(customer.getName() + " is no longer served");

@@ -3,10 +3,8 @@
          xmlns:q="customers.xsd">
     <customer>
         <name>Ivan Ivanov</name>
-        <amount>0</amount>
     </customer>
     <customer>
         <name>Petr Petrovich</name>
-        <amount>0</amount>
     </customer>
 </q:customers>
