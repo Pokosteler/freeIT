@@ -26,15 +26,9 @@ public class Library implements Runnable {
     public List<Book> createBook(List<List<String>> listOfBook) {
         List<Book> books = new ArrayList<>();
         for (List<String> dataOfBook : listOfBook) {
-            Book book = new Book();
-            book.setName((dataOfBook.get(0)));
-            book.setAuthor(dataOfBook.get(1));
-            book.setGenre(dataOfBook.get(2));
-            book.setYear(Integer.valueOf(dataOfBook.get(3)));
-            book.setCover(dataOfBook.get(4));
-            book.setAvailableForReading(Boolean.valueOf((dataOfBook.get(5))));
-            book.setOutLibrary(Boolean.valueOf((dataOfBook.get(6))));
-            book.setAmount(Integer.valueOf(dataOfBook.get(7)));
+            Book book = new Book(dataOfBook.get(0), dataOfBook.get(1), dataOfBook.get(2),
+                    Integer.valueOf(dataOfBook.get(3)), dataOfBook.get(4), Boolean.valueOf(dataOfBook.get(5)),
+                    Boolean.valueOf(dataOfBook.get(6)), Integer.valueOf(dataOfBook.get(7)));
             books.add(book);
         }
         return books;
