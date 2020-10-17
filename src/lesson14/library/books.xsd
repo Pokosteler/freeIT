@@ -1,0 +1,46 @@
+<?xml version="1.0"  standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="books.xsd">
+    <element name="books">
+        <complexType>
+            <sequence>
+                <element name="book" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <maxLength value="40"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="author" type="string"/>
+                            <element name="genres">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="comedy"/>
+                                        <enumeration value="tragedy"/>
+                                        <enumeration value="drama"/>
+                                        <enumeration value="horror"/>
+                                        <enumeration value="novel"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="year" type="integer"/>
+                            <element name="cover">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="hardcover"/>
+                                        <enumeration value="paperback"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="availableForReading" type="boolean"/>
+                            <element name="outLibrary" type="boolean"/>
+                            <element name="amount" type="integer"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

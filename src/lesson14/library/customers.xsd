@@ -1,0 +1,22 @@
+<?xml version="1.0"  standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="customers.xsd">
+    <element name="customers">
+        <complexType>
+            <sequence>
+                <element name="customer" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <maxLength value="40"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<q:customers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="customers.xsd"
+         xmlns:q="customers.xsd">
+    <customer>
+        <name>Ivan Ivanov</name>
+    </customer>
+    <customer>
+        <name>Petr Petrovich</name>
+    </customer>
+</q:customers>
